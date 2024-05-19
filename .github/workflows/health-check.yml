@@ -1,0 +1,44 @@
+# ===================================================================
+# Health Check
+# ===================================================================
+
+name: Health Check
+
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+# github scheduler not supported seconds cron feature
+on:
+  schedule:
+    # Just Run Every 5minute https://crontab.guru
+    - cron: '*/1 * * * *'
+
+# Job Tasks
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      # Echo
+      - name: echo job
+        run: echo "Health Check"
+
+      # Start Job
+      - name: start Job
+        run: date
+
+      - name: Api Request
+        id: api-request
+        uses: muhfaris/request-action@v1
+        with:
+          url: https://api.oksusu.site/api/v1/metadata/version
+          method: GET
+
+      - name: Show API Response Status
+        run: |
+          echo "Response Status: ${{ steps.api-request.outputs.response-status }}"
+
+      - name: Show API Response Data
+        run: |
+          echo "Response Data: ${{ steps.api-request.outputs.response-data }}"
+
+      # End Job
+      - name: end Job
+        run: date
