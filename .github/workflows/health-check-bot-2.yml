@@ -2,7 +2,7 @@
 # Health Check Bot 2
 # ===================================================================
 
-name: Health Check Bot
+name: Health Check Bot 2
 
 # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
 # github scheduler not supported seconds cron feature
