@@ -24,20 +24,11 @@ jobs:
       - name: start Job
         run: date
 
-      - name: Api Request
-        id: api-request
-        uses: muhfaris/request-action@v1
-        with:
-          url: https://api.oksusu.site/api/v1/metadata/version
-          method: GET
-
-      - name: Show API Response Status
+      - name: oksusu health check
         run: |
-          echo "Response Status: ${{ steps.api-request.outputs.response-status }}"
-
-      - name: Show API Response Data
-        run: |
-          echo "Response Data: ${{ steps.api-request.outputs.response-data }}"
+          curl -X 'GET' \
+          'https://api.oksusu.site/api/v1/metadata/version' \
+          -H 'accept: application/json'
 
       # End Job
       - name: end Job
