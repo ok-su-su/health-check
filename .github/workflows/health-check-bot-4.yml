@@ -1,0 +1,45 @@
+# ===================================================================
+# Health Check Bot 4
+# ===================================================================
+
+name: Health Check Bot 4
+
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+# github scheduler not supported seconds cron feature
+on:
+  schedule:
+    # Just Run Every minute, but this action may be delayed https://crontab.guru
+    - cron: '*/1 * * * *'
+  push:
+    branches: 'main'
+
+# Job Tasks
+jobs:
+  health-check-bot-4:
+    runs-on: ubuntu-latest
+    steps:
+      # Echo
+      - name: echo job
+        run: echo "Health Check Bot 4"
+
+      # Start Job
+      - name: start Job
+        run: date
+
+      # ===================================================================
+      # Health Check Start
+      # ===================================================================
+
+      - name: oksusu health check
+        run: |
+          curl -X 'GET' \
+          'https://api.oksusu.site/api/v1/metadata/version' \
+          -H 'accept: application/json'
+
+      # ===================================================================
+      # Health Check End
+      # ===================================================================
+
+      # End Job
+      - name: end Job
+        run: date
