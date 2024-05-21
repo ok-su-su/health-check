@@ -3,7 +3,7 @@
 
 ### Health Check Bot
 
-> Four bots are operating through a cron-based scheduler.
+> Bots are operating through a cron-based scheduler.
 
 - health-check
 - health-check-bot-1
