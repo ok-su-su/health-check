@@ -8,9 +8,6 @@
 - health-check
 - health-check-bot-1
 - health-check-bot-2
-- health-check-bot-3
-- health-check-bot-4
-- health-check-bot-5
 
 ### Health Check Table
 
