@@ -13,4 +13,4 @@
 
 |API Server|Health Check API|Etc|
 |---|---|---|
-|Oksusu Server API|`https://api.oksusu.site/api/v1/metadata/version`|start 2024.05.21|
+|Oksusu Server API|`https://api.oksusu.site/health`|start 2024.05.21|
