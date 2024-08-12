@@ -33,7 +33,7 @@ jobs:
       - name: oksusu health check
         run: |
           curl -X 'GET' \
-          'https://api.oksusu.site/api/v1/metadata/version' \
+          'https://api.oksusu.site/health' \
           -H 'accept: application/json'
 
       # ===================================================================
